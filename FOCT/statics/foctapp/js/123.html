@@ -1,0 +1,139 @@
+
+<!doctype html>
+<html class="no-js" ng-app="daocloudDashboardApp" ng-class="{'has-copyright': vendor.name}">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <base href="/">
+  <title ng-bind="'Dashboard · ' + vendor.title"></title>
+  <meta name="description" content="DaoCloud 成立于 2014 年末，是新一代容器云计算领域的明星企业。DaoCloud产品线涵盖互联网应用的开发、交付、运维和运营全生命周期，并提供公有云、混合云和私有云等多种交付方式。DaoCloud  核心团队由来自微软、EMC、VMware 等知名企业的高管和技术专家组成，公司已经完成两轮超过千万美元规模融资，产品被企业级客户、互联网公司等广泛采用。DaoCloud 总部位于中国上海，并在北京、武汉、深圳、北美等地设有分支机构。">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="https://dn-daodashboard-prod.qbox.me/app/fff7e785.vendor.css"/>
+  <link rel="stylesheet" href="https://dn-daodashboard-prod.qbox.me/app/cd743a5b.app.css"/>
+  <!--[if lt IE 9]>
+    <script src="https://dn-daodashboard-prod.qbox.me/bower_components/es5-shim/es5-shim.js"></script>
+    <script src="https://dn-daodashboard-prod.qbox.me/bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+  <script src="https://dn-daodashboard-prod.qbox.me/app/c6b11572.vendor.js"></script>
+  <script src="https://dn-daodashboard-prod.qbox.me/bower_components/moment/locale/zh-cn.js"></script>
+  <script>
+  var toHttp = function() {
+    var protocol = window.location.protocol;
+    if (protocol !== 'http:') {
+      var href = window.location.href;
+      window.location.href = href.replace(/https/, "http");
+    }
+  };
+  </script>
+</head>
+
+<body class="ui-v3 {{pageClass}}">
+  <!--[if lt IE 10]>
+      <p class="browsehappy">您的浏览器<strong>太过时了</strong>,我们已经不再支持. 请先<a href="http://browsehappy.com/">升级您的浏览器</a>.</p>
+    <![endif]-->
+  <img src="https://dn-daoweb-resource.qbox.me/apple-touch-icon.png" class="hidden" onerror="toHttp()">
+  <div class="hidden" ng-include="'components/core/svg-sprite.html'"></div>
+  <nav class="navbar dao-navbar" ng-include="'templates/includes/header.html'" ng-cloak></nav>
+  <div ng-if="pageClass !== 'dashboard'" ng-include="'templates/includes/navbar.html'" ng-cloak></div>
+  <div ng-cloak ng-hide="load.loaded || !load.nf" ng-include="'templates/show-notfound.html'"></div>
+  <div class="main" ng-show="load.loaded" ng-view></div>
+  <div class="wallpaper" ng-if="pageClass && pageClass === 'dashboard'" ng-cloak></div>
+  <div class="loader" style="position: absolute; top:50%; left:50%; transform: translate(-50%, -50%);" ng-hide="load.loaded || load.nf">
+    <div class="loader-inner pacman">
+      <div ng-style="{'border-color': (pageClass && pageClass==='dashboard')?'#fff transparent #fff #fff':'#ccc transparent #ccc #ccc'}"></div>
+      <div ng-style="{'border-color': (pageClass && pageClass==='dashboard')?'#fff transparent #fff #fff':'#ccc transparent #ccc #ccc'}"></div>
+      <div ng-style="{'background-color': (pageClass && pageClass==='dashboard')?'#fff':'#ccc'}"></div>
+      <div ng-style="{'background-color': (pageClass && pageClass==='dashboard')?'#fff':'#ccc'}"></div>
+      <div ng-style="{'background-color': (pageClass && pageClass==='dashboard')?'#fff':'#ccc'}"></div>
+    </div>
+  </div>
+
+  <div class="copyright" ng-if="vendor.name && pageClass==='dashboard' && load.loaded">Powered By <a href="https://www.daocloud.io" target="_blank">DaoCloud</a></div>
+
+  <script>
+  function ready(fn) {
+    'use strict';
+
+    var readyState = document.readyState
+
+    if (readyState !== 'uninitialized' || readyState !== 'loading') fn()
+    else document.addEventListener('DOMContentLoaded', fn)
+  }
+  </script>
+  <script>
+    var excludeModuleConfig = "deploy,mirror" || '';
+    var excludeModule = excludeModuleConfig.split(',');
+  </script>
+  <script src="https://dn-daodashboard-prod.qbox.me/app/8f3feee9.app.js"></script>
+  <script src="https://dn-daodashboard-prod.qbox.me/sentry/raven-3.4.1.min.js"></script>
+  <script>
+  Raven.config('https://cc00cd939cef47bebe5a04e41c02e516@app.getsentry.com/92796').install();
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+   
+    ga('create', 'UA-57261294-1', 'auto');
+    ga('send', 'pageview');
+   
+  </script>
+  <script>
+  (function(i, s, o, g, r, a, m) {
+    i['DaoVoiceObject'] = r;
+    i[r] = i[r] || function() {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    a.charset = "utf-8";
+    m.parentNode.insertBefore(a, m);
+    Object.defineProperty(i, 'daovoice', {
+      configurable: true,
+      enumerable: true,
+      get: function() {
+        function c(x, y) {
+          y = y ? y : {};
+
+          y['marketing_referrer'] = $.cookie('marketing_referrer'),
+          y['utm_source'] = $.cookie('utm_source'),
+          y['utm_medium'] = $.cookie('utm_medium'),
+          y['utm_term'] = $.cookie('utm_term'),
+          y['utm_content'] = $.cookie('utm_content'),
+          y['utm_campaign'] = $.cookie('utm_campaign');
+
+          i[r].apply(this, [x, y]);
+        }
+
+        c.q = i[r].q;
+        return c;
+      },
+      set: function(p) {
+        i[r] = p;
+      }
+    });
+  })(window, document, 'script', '//widget.daovoice.io/widget/91af7bf3.js', '_daovoice');
+  </script>
+  <script>
+    var _vds = _vds || [];
+    window._vds = _vds;
+    (function(){
+      _vds.push(['setAccountId', 'ca98233421c35bd16fa5564de085fdc6']);
+      (function() {
+        var vds = document.createElement('script');
+        vds.type='text/javascript';
+        vds.async = true;
+        vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(vds, s);
+      })();
+    })();
+  </script>
+</body>
+
+</html>

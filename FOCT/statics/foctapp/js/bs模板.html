@@ -1,0 +1,436 @@
+
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta name="author" content="乐鱼，乐鱼网，乐鱼社区">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta name=referrer content=origin> 
+<meta name=viewport content="width=device-width,initial-scale=1"> 
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<title>简历管理-会员中心-乐鱼网</title> 
+<link rel="shortcut icon" type="image/x-icon" href="http://www.leyu.net/favicon.ico"/>
+<link rel="bookmark" type="image/x-icon" href="http://www.leyu.net/favicon.ico"/>
+<link rel="archives" title="乐鱼网" href="http://www.leyu.net/archiver/"/>
+<script type="text/javascript">window.onerror=function(){return true;}</script><link href="http://www.leyu.net/file/yi/css/base.css" rel="stylesheet"> 
+<link href="http://www.leyu.net/file/yi/css/bootstrap.min.css" rel="stylesheet"> 
+<link href="http://www.leyu.net/file/yi/css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://www.leyu.net/file/yi/css/font-awesome.min.css" rel="stylesheet"> 
+<link href="http://www.leyu.net/file/yi/css/front_common.css" rel="stylesheet"> 
+<LINK href="http://www.leyu.net/file/yi/css/y2-style.css" rel="stylesheet">
+<link href="http://www.leyu.net/file/yi/css/a4.css" rel="stylesheet"> 
+<link href="http://www.leyu.net/file/yi/css/a5.css" rel="stylesheet"> 
+<script type="text/javascript" src="http://www.leyu.net/lang/zh-cn/lang.js"></script>
+<script type="text/javascript" src="http://www.leyu.net/file/yi/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.leyu.net/file/yi/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="http://www.leyu.net/file/script/config.js"></script>
+<script type="text/javascript" src="http://www.leyu.net/file/script/common.js"></script>
+<script type="text/javascript" src="http://www.leyu.net/file/script/page.js"></script>
+<script type="text/javascript" src="http://www.leyu.net/file/script/jquery.lazyload.js"></script><script type="text/javascript" src="http://www.leyu.net/file/script/admin.js"></script>
+<script type="text/javascript" src="http://www.leyu.net/file/script/member.js"></script>
+<script type="text/javascript">
+var searchid = ;
+</script>
+  <!--[if lt IE 9]>
+      <script src="http://www.leyu.net/file/yi/js/html5shiv.min.js"></script>
+      <script src="http://www.leyu.net/file/yi/js/respond.min.js"></script>
+    <![endif]--> 
+ <!-- Navbar --> 
+<body>
+<DIV class="navbar n_top">   
+<DIV class="navbar-inner">
+<DIV class="container">
+<A class="btn btn-navbar" style="padding: 3px 10px; color: rgb(0, 0, 0);" data-target=".nav-collapse" data-toggle="collapse">导航栏</A><SPAN></SPAN>
+<A name="top" class="brand text_bnb_strong bnb_middle" href="http://www.leyu.net/" style="line-height:20px">乐鱼网</A>
+<DIV class="nav-collapse collapse">
+<UL class="nav pull-left" style="margin-right: 0px;">
+  <LI class="divider-vertical"></LI>
+  <LI class="dropdown active"><A class="text_bnb_strong" href="http://www.leyu.net/jianli/">技术兼职</A></LI>
+  <LI class="divider-vertical"></LI>
+  <LI class="dropdown"><A class="text_bnb_strong" href="http://www.leyu.net/xuqiu/">招聘需求</A></LI>
+  <LI class="divider-vertical"></LI>
+</UL>
+<UL class="nav pull-right" id="destoon_member"></UL>
+</DIV></DIV></DIV></DIV> <script type="text/javascript">c(1);</script>
+<DIV id="wrap_container">
+<DIV class="clearfix" id="wrap_container_main">
+<form method="post" action="http://www.leyu.net/jianli-add.html" id="dform" onsubmit="return check();">
+<input type="hidden" name="action" value="add"/>
+<input type="hidden" name="mid" value="8"/>
+<input type="hidden" name="resume" value="1"/>
+<input type="hidden" name="itemid" value="0"/>
+<input type="hidden" name="forward" value="http://www.leyu.net/member/my.php?mid=8&resume=1"/>
+<DIV class="container" style="margin-top: 50px;">
+<DIV class="row-fluid">
+<DIV class="text-center" style="margin-bottom: 80px;">
+<H2><SPAN>欢迎发布技术简历</SPAN></H2><SPAN>
+    发布技术简历，利用业余时间兼职，赚取外快，平多项措施保障技术兼职利益。
+   </SPAN>
+ </DIV></DIV>
+ 
+<h4 class="df_title">兼职信息</h4> 
+<DIV class="row-fluid well_white new-well">
+ 
+<DIV class="span2 new-clo1"></DIV>
+ 
+<DIV class="span10 top_list new-clo1">
+<P><SPAN class="span8"><SPAN class="btbt span3"><FONT color="#ff0000">* </FONT>可兼职角色：</SPAN>  
+<input name="post[catid]" id="catid_1" type="hidden" value="0"/><span id="load_category_1"><select onchange="load_category(this.value, 1);" class="span4 select_change" id="industry_type"><option value="0">请选择</option><option value="384">移动开发</option><option value="385">后端开发</option><option value="386">前端开发</option><option value="387">运维人员</option><option value="388">DBA</option><option value="389">视觉设计</option><option value="390">交互设计</option><option value="391">产品经理</option><option value="392">运营人员</option><option value="393">测试人员</option><option value="394">其他</option><option value="510">产品设计师</option><option value="511">市场/营销</option><option value="512">编辑</option></select> </span><script type="text/javascript">var category_moduleid = new Array;category_moduleid[1]="8";var category_title = new Array;category_title[1]='请选择';var category_extend = new Array;category_extend[1]='4037kJBdamIGKT9QFbqO7sdmY9ofpCM6ABx2eTtQIuDaTKD7-S-k4wH179cW-P-77CMqz-P-KxQuQ2llMkM7UQ0dYhEmF6Ud8T0Ggb-P-UMty5kF';var category_catid = new Array;category_catid[1]='0';var category_deep = new Array;category_deep[1]='0';</script><script type="text/javascript" src="http://www.leyu.net/file/script/category.js"></script>                   
+</SPAN><SPAN class="span4"></SPAN></P>
+<P><SPAN class="span8"><SPAN class="btbt span3"><FONT color="#ff0000">* </FONT>可兼职区域：</SPAN>
+<input name="post[areaid]" id="areaid_1" type="hidden" value="0"/><span id="load_area_1"><select onchange="load_area(this.value, 1);" class="select_change span4"><option value="0">请选择</option><option value="1">北京</option><option value="2">上海</option><option value="3">天津</option><option value="4">重庆</option><option value="5">河北</option><option value="6">山西</option><option value="7">内蒙古</option><option value="8">辽宁</option><option value="9">吉林</option><option value="10">黑龙江</option><option value="11">江苏</option><option value="12">浙江</option><option value="13">安徽</option><option value="14">福建</option><option value="15">江西</option><option value="16">山东</option><option value="17">河南</option><option value="18">湖北</option><option value="19">湖南</option><option value="20">广东</option><option value="21">广西</option><option value="22">海南</option><option value="23">四川</option><option value="24">贵州</option><option value="25">云南</option><option value="26">西藏</option><option value="27">陕西</option><option value="28">甘肃</option><option value="29">青海</option><option value="30">宁夏</option><option value="31">新疆</option><option value="32">台湾</option><option value="33">香港</option><option value="34">澳门</option></select> </span><script type="text/javascript">var area_title = new Array;area_title[1]='请选择';var area_extend = new Array;area_extend[1]='ab075SPOjjsbfB735UZO6Y8jt-S-p4jVH-P-E0eiPxLd8gblXPnDYJheUc6FY5lD9ClNfj0GFr0ZTdRNKk8';var area_areaid = new Array;area_areaid[1]='0';var area_deep = new Array;area_deep[1]='0';</script><script type="text/javascript" src="http://www.leyu.net/file/script/area.js"></script> <br>
+<SPAN class="btbt span3" style="margin-left: 0px;"></SPAN> 
+<INPUT name="post_fields[jutidizhi]" class="span8 blur_change" id="jutidizhi" style="margin-bottom: 0px;" type="text" value="" placeholder="具体区域，如“中关村西” “上地” “五道口”"> 
+ </SPAN><SPAN class="span4"></SPAN></P>
+ 
+<P style="padding-top: 30px;"><SPAN class="span8"><SPAN class="btbt span3"><FONT color="#ff0000">* </FONT>可兼职时间：</SPAN>
+<span class="span3" style="margin-left: 0px;">
+<label class="radio inline" style="padding-left: 0px;">
+<input class="p_checkbox somesite" type="checkbox" name="post_fields[jianzhishijian][]" value="工作日下班后"  id="jianzhishijian_0"><span class="show_title">工作日下班后</span></label> 
+</span>
+<span class="span3">
+<label class="radio inline"><input class="p_checkbox somesite" type="checkbox" name="post_fields[jianzhishijian][]" value="周六"  id="jianzhishijian_1"><span class="show_title">周六</span></label>
+</span>
+<span class="span3">
+<label class="radio inline"><input class="p_checkbox somesite" type="checkbox" name="post_fields[jianzhishijian][]" value="周日"  id="jianzhishijian_2"><span class="show_title">周日</span></label>
+</span>
+</SPAN><SPAN class="span4"><SPAN class="pull-right p_span_font"></SPAN></SPAN></P>
+<P><SPAN class="span8">
+<SPAN class="btbt span3"><FONT color="#ff0000">* </FONT>日薪：</SPAN>
+<span class="span9 span10" style="margin-left: 0px;">
+<input name="post_fields[rixin]" id="rixin" class="span2 blur_change check_num" type="text" placeholder="元" value=""> /天 (8小时)</span>
+<SPAN class="span12" style="margin-left: 140px;"><SPAN class="pull-right p_span_font">建议刚开始不要设置较高的价格，等获得好评后再调高价格。<br/>
+推荐先和您现在工作的日薪（税前月薪除以22天）持平。</SPAN></SPAN></SPAN>
+<SPAN class="span4"><SPAN class="pull-right p_span_font"></SPAN></SPAN></P><BR>
+</DIV></DIV>
+<hr>
+<h4 class="df_title">相关经验</h4> 
+<DIV class="row-fluid well_white new-well">
+ 
+<DIV class="span2 new-clo1"></DIV>
+<DIV class="span10 top_list new-clo1">
+<P><SPAN class="span8">
+<SPAN class="btbt span3"><FONT color="#ff0000">* </FONT>公司：</SPAN>
+<span class="span9 span10"><input name="post_fields[gongsi]" id="gongsi" class="span12 blur_change check_num" type="text" placeholder="曾就职的最知名公司的简称，如‘阿里’" value=""></span>
+</SPAN>
+<SPAN class="span4"><SPAN class="pull-right p_span_font"></SPAN></SPAN></P>
+<P><SPAN class="span8">
+<SPAN class="btbt span3"><FONT color="#ff0000">* </FONT>职位：</SPAN>
+<span class="span9 span10"><input name="post_fields[zhiwei]" id="zhiwei" class="span12 blur_change check_num" type="text" placeholder="如：高级iOS工程师" value=""></span>
+</SPAN>
+<SPAN class="span4"><SPAN class="pull-right p_span_font"></SPAN></SPAN></P>
+<P><SPAN class="span8">
+<SPAN class="btbt span3"><FONT color="#ff0000">* </FONT>工作年限：</SPAN>
+<span class="span9 span10"><input name="post[experience]" class="span2 blur_change check_num" id="experience" type="text" placeholder="" value="1"> 年</span>
+</SPAN>
+<SPAN class="span4"><SPAN class="pull-right p_span_font"></SPAN></SPAN></P>
+<hr>
+<P><SPAN class="span8">
+<SPAN class="btbt span3" style="vertical-align: top;"><FONT color="#ff0000">* </FONT>技术经验：</SPAN>
+<span class="span9 span10">
+<TEXTAREA name="post[content]" id="content" class="span12 blur_change" rows="8" onfocus="this.placeholder=''" placeholder="请详细填写您的技术经验和能力情况，展示您的实力，有利于更多公司预约您。
+"></TEXTAREA> 
+<SPAN class="p_span_font" style="margin-left:0px;">示例：<br>
+1.高级php，移动、pc、web后端 <br/> 
+2.熟练掌握linux操作系统，能够独立架设开发环境； <br/> 
+3.熟练使用apache,nginx应用服务器，掌握nginx反向代理，负载均衡； <br/> 
+4.了解 memcached 集群处理。 <br/> 
+5.熟练使用 MySQL 数据库，mysql集群，主从读写分离； <br/> 
+6.熟练使用PHP语言及熟练使用常用框架，例如YII,CI开发框架，掌握PHP5面向对象和MVC开发模式； <br/> 
+7.熟练掌握web开发相关技术，如html，javascript，xml，ajax等；
+</SPAN></SPAN></SPAN>
+<SPAN class="span4"><SPAN class="pull-right p_span_font" id="dcontent"></SPAN></SPAN></P><BR><BR>
+<P><SPAN class="span8">
+<SPAN class="btbt span3" style="vertical-align: top;">项目经验：</SPAN>
+<span class="span9 span10">
+<TEXTAREA name="post_fields[xiangmujingyan]" id="xiangmujingyan" class="span12 blur_change" rows="8" onfocus="this.placeholder=''" placeholder="请详细填写您在工作和业余时间参与过的项目，以及您在项目中所做的具体工作，有利于更多公司预约您。"></TEXTAREA>
+ 
+<SPAN class="p_span_font" style="margin-left:0px;">示例：<br>
+工作项目：<br>
+1、XXX购物APP <br/> 
+主要负责商品展示、购物流程、付款功能。  <br/> 
+2、XXX商城系统  <br/> 
+主要负责商品发布、商品采购、个人中心。  <br/> 
+3、XXX网站  <br/> 
+主要负责项目重构、版本维护。 <br/> 
+4、XXX画册设计  <br/> 
+有海报，网页平面，品牌设计，LOGO设计，图形设计等
+</SPAN></SPAN>
+<SPAN class="span4"><SPAN class="pull-right p_span_font"></SPAN></SPAN></P><BR><BR></P><BR><BR></DIV>
+</DIV>
+<hr>
+<h4 class="df_title">作品展示</h4>
+<DIV class="row-fluid well_white new-well">
+<DIV class="span12" >
+<div class="y2-p1 y2-bg3" id="works_window">
+<div class="tc y2-0324-div5 mb50" id="g-0330js-div1">
+<a class="active" id="works_1" href="javascript:;">上传图片</a>
+<a id="works_0" href="javascript:;">在线作品</a> 
+<span class="hide" id="work_type" data="1"></span></div>
+<div class="y2-0325-div10">
+<ul class="y2-0325-ul5 oh bc">
+  <li class="y2-0325-ul5-li1 tc oh" id="upload_img">
+  <img src="http://www.leyu.net/file/yi/images/shangchuan.jpg" id="showthumb" title="上传图片" alt="" onclick="Dalbum('',8,450,450, Dd('thumb').value, true);">
+   <input name="post_fields[zuopintupian]" type="hidden" id="thumb" value="">  
+  </li>  
+  
+  
+  <li class="mt10" style="width:450px;margin-left:170px">
+  <label class="Clearfix f14">
+  <span class="y2-user-label1 y2-label-c1 work_brief_img">作品描述</span>
+  <input type="text" name="post_fields[tupianmiaoshu]" id="tupianmiaoshu" class="span12 blur_change check_num" maxlength="30" style="height:30px;" placeholder="请在30个字以内对您的作品简单描述。" value="">
+  </label></li></ul></div>
+  
+<div class="y2-0325-div11 none">
+<ul class="y2-0325-ul5 oh bc">
+  <li class="mt10" style="width:450px;margin-left:170px">
+  <label class="Clearfix f14">
+  <span class="y2-user-label1 y2-label-c1">作品链接</span>
+  <input class="span12 blur_change check_num" style="height:30px;" type="text" name="post_fields[zaixianzuopin]" id="zaixianzuopin" value=""> 
+  </label></li>
+  
+  <li class="mt10" style="width:450px;margin-left:170px">
+  <label class="Clearfix f14">
+  <span class="y2-user-label1 y2-label-c1">作品描述</span>
+  <input type="text" name="post_fields[zuopinmiaoshu]" id="zuopinmiaoshu" class="span12 blur_change check_num" maxlength="30" style="height:30px;" placeholder="请在30个字以内对您的作品简单描述。" value="">
+  </label></li></ul></div>
+  </div>
+</DIV></DIV>
+<hr>
+<h4 class="df_title">私密信息</h4> 
+<DIV class="row-fluid well_white new-well">
+ 
+<DIV class="span2 new-clo1"></DIV>
+
+<DIV class="span10 top_list new-clo1">
+<P><SPAN class="span8"><SPAN class="btbt span3"><FONT color="#ff0000">* </FONT>真实姓名：</SPAN>
+<span class="span9"><INPUT name="post[truename]" class="blur_change" id="truename" style="margin-bottom: 0px;" type="text" maxlength="12" value="">&nbsp;&nbsp;</SPAN>
+</SPAN><SPAN class="span4"><SPAN class="pull-right p_span_font"></SPAN></SPAN></P>
+
+
+<P><SPAN class="span8"><SPAN class="btbt span3"><FONT color="#ff0000">* </FONT>联系电话：</SPAN>
+<input type="hidden" name="gai" id="gai" value="0"/>
+<span id="dianhua" class="span9 mtop5"><span id="dianhua0">17000101659  </span>
+</SPAN></SPAN></P>
+<P><SPAN class="span8"><SPAN class="btbt span3"><FONT color="#ff0000">* </FONT>公开程度：</SPAN>
+<span id="dianhua" class="span9 mtop5">
+<input type="radio" class="p_checkbox" name="post[open]" value="3" checked/> 开放&nbsp;&nbsp;
+<input type="radio" class="p_checkbox" name="post[open]" value="2"/> 仅网站可见&nbsp;&nbsp;
+<input type="radio" class="p_checkbox" name="post[open]" value="1"/> 关闭&nbsp;&nbsp;
+</SPAN></SPAN><SPAN class="span4" id="dsendsok"><SPAN class="pull-right p_span_font"></SPAN></SPAN></P>
+
+
+
+
+</DIV></DIV><BR>
+
+
+ 
+<DIV class="row-fluid well_white new-well">
+<DIV class="span12" style="text-align: center;"> 
+<input class="btn btn-success btn-large" id="sub_project"  type="submit" name="submit" value="发布">              
+<BR></DIV></DIV>
+</FORM>
+</DIV></DIV>
+<DIV style="clear: both;"></DIV>
+<script type="text/javascript" src="http://www.leyu.net/file/script/clear.js"></script>
+<script type="text/javascript" src="http://www.leyu.net/file/script/guest.js"></script>
+<script type="text/javascript">
+$(function(){
+ $("#works_1").click(function(){
+ 
+    $("#works_1").removeClass("active"); 
+    $("#works_0").removeClass("active");
+    $(".y2-0325-div10").removeClass("none");
+$(".y2-0325-div11").removeClass("none");
+$(".y2-0325-div11").addClass("none");
+    $("#works_1").addClass("active");
+  });
+  
+  
+ $("#works_0").click(function(){
+    $("#works_1").removeClass("active"); 
+    $("#works_0").removeClass("active");
+    $(".y2-0325-div10").removeClass("none");
+$(".y2-0325-div11").removeClass("none");
+$(".y2-0325-div10").addClass("none");
+    $("#works_0").addClass("active");
+  });
+  
+});
+function dhquxiao(){
+    $("#gai").val("0");
+    $("#dianhua0").removeClass("hide"); 
+    $("#dianhua1").addClass("hide");
+}
+function check() {
+var l;
+var f;
+f = 'catid_1';
+if(Dd(f).value == 0) {
+Dmsg('请选择求职行业', 'catid', 1);
+return false;
+}
+f = 'areaid_1';
+if(Dd(f).value == 0) {
+Dmsg('请选择居住地区', 'areaid', 1);
+return false;
+}
+f = 'experience';
+if(Dd(f).value.length < 1) {
+Dmsg('请填写工作经验', f);
+return false;
+}
+/*f = 'mobile';
+if(Dd(f).value.length < 7) {
+Dmsg('请填写联系手机', f);
+return false;
+}
+f = 'email';
+if(Dd(f).value.length < 6) {
+Dmsg('请填写电子邮件', f);
+return false;
+}*/
+f = 'content';
+l = FCKLen();
+if(l < 5) {
+Dmsg('技术经验最少5字，当前已输入'+l+'字', f);
+return false;
+}
+f = "jianzhishijian";l = Dd(f).value.length;if(l < 1) {Dmsg("兼职时间不能少于1字符", f);return false;}f = "rixin";l = Dd(f).value.length;if(l < 1) {Dmsg("日薪不能少于1字符", f);return false;}f = "gongsi";l = Dd(f).value.length;if(l < 1) {Dmsg("公司不能少于1字符", f);return false;}f = "zhiwei";l = Dd(f).value.length;if(l < 1) {Dmsg("职位不能少于1字符", f);return false;}f = 'captcha';
+l = Dd(f).value;
+if(!is_captcha(l)) {
+Dmsg('请填写正确的验证码', f);
+return false;
+}
+if(Dd('c'+f).innerHTML.indexOf('error') != -1) {
+Dd(f).focus();
+return false;
+}
+return true;
+}
+function SendSCode() {
+if(Dd('dmobile').innerHTML.indexOf('right') == -1) {
+Dd('mobile').focus();
+return;
+}
+makeRequest('action=1395e8e70f4e13dbd22660da94a849ea&value='+Dd('mobile').value, 'http://www.leyu.net/jianli-add.html', '_SendSCode');
+Dh('sendsok');
+Dd('send_scode').value = '正在发送';
+Dd('send_scode').disabled = true;
+}
+function _SendSCode() {
+var f = 'mobile';
+if(xmlHttp.readyState==4 && xmlHttp.status==200) {
+Dd('send_scode').value = xmlHttp.responseText == 1 ? '发送成功' : '立即发送';
+Dd('send_scode').disabled = xmlHttp.responseText == 1 ? true : false;
+if(xmlHttp.responseText == 1) {
+Ds('sendsok');
+Dd('dsendsok').innerHTML = '<img src="http://www.leyu.net/member/image/ico_mailok.gif" align="absmiddle"/> <span class="f_green">短信发送成功</span>';
+StopSCode();
+} else if(xmlHttp.responseText == 2) {
+err_msg('手机号码格式错误，请检查', f);
+Df(f);
+} else if(xmlHttp.responseText == 3) {
+err_msg('手机号码已存在，请更换', f);
+Df(f);
+} else if(xmlHttp.responseText == 5) {
+alert('短信发送过快，请稍后再试');
+} else if(xmlHttp.responseText == 6) {
+alert('尝试发送次数太多，请稍后再试');
+} else {
+alert('未知错误，请重试');
+}
+}
+}
+function StopSCode() {
+Dd('send_scode').disabled = true;
+var i = 180;
+var interval=window.setInterval(
+function() {
+if(i == 0) {
+Dd('send_scode').value = '立即发送';
+Dd('send_scode').disabled = false;
+clearInterval(interval);
+} else {
+Dd('send_scode').value = '重新发送('+i+')';
+i--;
+}
+},
+1000);
+}
+</script>
+</DIV></DIV></DIV><DIV style="clear: both;"></DIV>
+</DIV></DIV>
+<!-- Footer --> 
+<div id="footer"> 
+<div class="container"> 
+<div class="row-fluid"> 
+<div class="span3"> 
+<h4 class="span12">新手指南</h4> 
+<div class="span12"> 
+<li class="span6"> <a href="http://www.leyu.net/member/register.php" target=_blank>注册新用户</a> </li> 
+<li class="span6"> <a href="http://www.leyu.net/i/guide.php" target=_blank>雇主入门</a> </li> 
+</div><div class="span12"> 
+<li class="span6"> <a href="http://www.leyu.net/i/newhandguide.php" target=_blank>技术兼职入门</a> </li> 
+<li class="span6"> <a href="http://www.leyu.net/about/7.html" target=_blank>规则中心</a> </li> 
+</div> </div> 
+<div class="span3"> 
+<h4 class="span12">我是雇主</h4> 
+<div class="span12"> 
+<li class="span6"> <a href="http://www.leyu.net/xuqiu-add.html" target=_blank>发布招聘需求</a> </li> 
+<li class="span6"> <a href="http://www.leyu.net/jianli/" target=_blank>挑选技术兼职</a> </li> 
+</div> 
+</div> 
+<div class="span3"> 
+<h4 class="span12">我是技术兼职</h4> 
+<div class="span12"> 
+<li class="span6"> <a href="http://www.leyu.net/jianli-add.html" target=_blank>发布简历</a> </li> 
+<li class="span6"> <a href="http://www.leyu.net/xuqiu/" target=_blank>投递职位</a> </li> 
+</div> 
+</div> 
+<div class="span3"> 
+<h4 class="span12">交易保障</h4> 
+<div class="span12">   
+<li class="span6"> <a href="http://www.leyu.net/i/danbao.php" target=_blank>乐鱼担保交易</a> </li> 
+<li class="span6"> <a href="http://www.leyu.net/i/baozhang.php" target=_blank>雇主保障</a> </li> 
+</div><div class="span12"> 
+<li class="span6"> <a href="" target=_blank>众包平台</a> </li>  
+</div> </div> </div> 
+</div> </div> 
+<div class=footer0> 
+<div class=container> 
+<ul>
+<li><a href="http://www.leyu.net/about/index.html" target=_blank>关于我们</a></li> 
+<li><a href="http://www.leyu.net/about/183.html" target=_blank>企业文化</a></li> 
+<li><a href="http://www.leyu.net/about/contact.html" target=_blank>联系方式</a></li> 
+<li><a href="http://www.leyu.net/about/8.html" target=_blank>使用协议</a></li> 
+<li><a href="http://www.leyu.net/sitemap/">网站地图</a></li> 
+<li><a href="http://www.leyu.net/link/">友情链接</a></li> 
+<li> <a href="http://www.leyu.net/guestbook/">网站留言</a> </li></ul>
+<div class="copy0"> ©2016 乐鱼网 All Rights Reserved 鲁ICP备15008460号<meta property="qc:admins" content="3222342767645156654" /><meta name="360-site-verification" content="ef51c4c2ba76f4f2e2fb494ab589e5bc" /><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?053e401eaa97d700b25f8b669ee34a9d";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script> </div> 
+ </div> </div> 
+<script type="text/javascript">
+var destoon_userid = 164;
+var destoon_username = 't148567857336';
+var destoon_message = 1;
+var destoon_chat = 0;
+var destoon_cart = get_cart();
+var destoon_member = '';
+destoon_member += '<LI class="dropdown"><A class="dropdown-toggle" style="padding: 10px 13px;" href="http://www.leyu.net/member/message.php">站内信<label class="label label-important xinxishu" id="destoon_message">1'+sound('message_1')+'</label></A></LI><LI class="dropdown"><A class="dropdown-toggle" style="padding: 10px 13px;" href="http://www.leyu.net/member/message.php">新对话<label class="label label-important xinxishu" id="destoon_chat">0</label></A></LI><LI class="dropdown"><A class="dropdown-toggle" href="http://www.leyu.net/com/t148567857336/" data-toggle="dropdown">148567857382<B class="caret"></B></A><UL class="dropdown-menu"><LI><A href="http://www.leyu.net/member/index.php"> 会员中心</A></LI><LI class="divider">&nbsp;</LI><LI><A href="http://www.leyu.net/member/my.php?mid=8&resume=1"> 我的兼职</A></LI><LI><A href="http://www.leyu.net/member/my.php?mid=9"> 我的招聘</A></LI><LI class="divider">&nbsp;</LI><LI><A href="http://www.leyu.net/member/record.php?action=order"> 资金管理</A></LI><LI class="divider">&nbsp;</LI><LI><A href="http://www.leyu.net/member/logout.php" id="tuichu"> 退出</A></LI></UL><DIV class="alert fade in top_pin hide"><A class="close" href="" data-dismiss="alert"><SPAN onclick="">×</SPAN></A><DIV id="for_top_tip"></DIV></DIV></LI>';
+$('#destoon_member').html(destoon_member);
+$('#destoon_cart').html(destoon_cart > 0 ? '<strong>'+destoon_cart+'</strong>' : 0);
+Dnotification('new_message', 'http://www.leyu.net/member/message.php', 'http://www.leyu.net/api/avatar/show.php?username=t148567857336&size=large', '站内信 (1)', '收到新的站内信件，点击查看');
+$(function(){$("img").lazyload();});</script>
+<script type="text/javascript">
+if(document.body.clientHeight > Dd('main').scrollHeight) Dd('main').style.height=document.body.clientHeight+'px';
+if(get_cookie('m_side') == 11 && Dd('side_oh').className == 'side_h') {Dh('side');Dd('side_oh').className = 'side_s';}
+var destoon_message = 1;
+var destoon_chat = 0;
+if(window.location.href.indexOf('message.php') == -1) $('#destoon_space').html(sound('message_1'));
+</script><LINK href="http://www.leyu.net/file/yi/css/tipswindown.css" rel="stylesheet"> <script src="http://www.leyu.net/file/yi/js/tipswindown.js" type="text/javascript"></script><script src="http://www.leyu.net/file/yi/js/m.js" type="text/javascript"></script>  <div id="duihua hide"></div><div class="webim" id="webim"><div class="webim-switch"><i class="webim-switch-icon"></i><span class="webim-switch-txt" id="webim-switch-status">最近联系人</span></div></div><div id="destoon_space"></div> <script type="text/javascript">$(document).ready(function(){$(".cc").bind("click",function(){tipsWindown("","iframe:"+$(this).parent().attr('url'),"600","400","false","","0","youxia","dhkbox","dhktitle","dhkcontent","");}); $("#webim").bind("click",function(){tipsWindown("","iframe:http://www.leyu.net/member/chat.php","600","400","false","","0","youxia","dhkbox","dhktitle","dhkcontent","");});            
+$(".yuyue").bind("click",function(){tipsWindown("","iframe:http://www.leyu.net/pay/buy.php?itemid="+$(this).attr('num')+"&h="+parseInt(10*Math.random()),"800","600","false","","true","zhong","yybox","yytitle","yycontent","");}); 
+$("#tuichu").attr("href","http://www.leyu.net/member/logout.php?forward=http://www.leyu.net/jianli-add.html");
+}); </script>
+</body>
+</html> 

@@ -1,0 +1,75 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+       <link href="{% static 'foctapp/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'foctapp/css/dashboard.css' %}" rel="stylesheet">
+</head>
+<body>
+ <div >
+                <form method="post" class="col-md-offset-5 col-md-4" >
+                    {% csrf_token %}
+                <h2 class="text-center">采集器测试记录</h2>
+                    <div class="form-group">
+                        <label for="Inputname">型号</label>
+                        <input type="text" class="form-control" id="Inputname" placeholder="采集器型号" required name="cjqtest_name">
+                    </div>
+                     <div class="form-group">
+                        <label for="Inputcurrent">一次电流</label>
+                        <input type="text" class="form-control" id="Inputcurrent" placeholder="(A)"   required name="cjqtest_current">
+                    </div>
+                    <div class="form-group">
+                        <label for="Inputcurrenterror">比差</label>
+                        <input type="text" class="form-control" id="Inputcurrenterror" placeholder="比差"name="cjqtest_currenterror">
+                    </div>
+                     <div class="form-group">
+                         <label for="Inputphase_error">相差</label>
+                         <input type="text" class="form-control" id="Inputphase_error" placeholder="相差" required name="cjqtest_phaseerror">
+                     </div>
+                     <div class="form-group">
+                         <label for="Inputlight_power">光功率</label>
+                         <input type="text" class="form-control" id="Inputlight_power" placeholder="光功率"name="cjqtest_lightpower">
+                     </div>
+                    <div class="form-group">
+                         <label for="Inputcomposite_error">复合误差</label>
+                         <input type="text" class="form-control" id="Inputcomposite_error" placeholder="复合误差大小"name="cjqtest_Inputcomposite_error">
+                     </div>
+                     <div class="form-group">
+                         <label for="Inputref">REF有效值</label>
+                         <input type="text" class="form-control" id="Inputcomposite_error" placeholder="REF"name="cjqtest_ref">
+                     </div>
+                    <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+
+            <script src="{% static 'foctapp/js/jquery.min.js' %}"></script>
+     <script>
+          window.drf = {
+          csrfHeaderName: "X-CSRFToken",
+          csrfCookieName: "csrftoken"
+        };
+          var a=$('form')
+         $('.btn.btn-primary').click(function(){
+             $.post('../collector/',function(){
+                 a
+
+             });
+         });
+
+     </script>
+
+
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

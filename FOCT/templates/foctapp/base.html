@@ -1,0 +1,87 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'foctapp/img/main.ico' %}">
+
+    <title>光智能数据分析平台</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'foctapp/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'foctapp/css/dashboard.css' %}" rel="stylesheet">
+  <script src="{% static 'foctapp/js/chart.js/dist/Chart.bundle.js'%}"></script>
+    <script src="{% static 'foctapp/js/chart.js/samples/utils.js'%}"></script>
+
+  </head>
+
+  <body>
+ <!--导航固定在顶部，反色导航条-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <!--固定宽度转换为100%宽度-->
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../home/">光智能数据分析平台</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+              <button type="button" class="btn btn-primary">搜索</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+              <h4><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><strong>生产过程记录</strong></h4>
+              <li><a href="">采集器</a></li>
+              <li><a href="">传感头</a></li>
+              </ul>
+          </ul>
+          <ul class="nav nav-sidebar">
+              <h4><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><strong>工艺文件记录</strong></h4>
+            <li><a href="">工艺流程卡</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+              <h4><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><strong>测试数据记录</strong></h4>
+            <li><a href="http://127.0.0.1:8000/foctapp/cjq_test">采集器测试</a></li>
+            <li><a href="">传感头测试</a></li>
+            <li><a href="">整机测试</a></li>
+          </ul>
+              <ul class="nav nav-sidebar">
+              <h4><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><strong>出厂检测记录</strong></h4>
+            <li><a href="">出厂报告单</a></li>
+          </ul>
+    </div>
+            </div>
+          </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'foctapp/js/jquery.min.js' %}"></script>
+    <script src="{% static 'foctapp/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'foctapp/js/chart.js' %}"></script>
+
+
+  </body>
+</html>
