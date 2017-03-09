@@ -25,6 +25,12 @@ admin.autodiscover()
 urlpatterns = patterns('',url(r'^admin/', include(admin.site.urls)), url(r'^foctapp/', include('foctapp.urls',namespace='foctapp')),
                         url(r'^root', include(router.urls)),url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
                        url(r'^collector/$', views.Collector_list.as_view()),
+                       url(r'^mirror/$', views.Mirror_list.as_view()),
                        url(r'^collector/(?P<pk>[0-9]+)/$', views.CollectorDetail.as_view()),
                        url(r'^home/', views.home),
+                       url(r'^login', views.login),
+                       url(r'^logout', views.logout),
+                       url(r'^index',views.index)
+
+
                        )

@@ -101,7 +101,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS =['C:/Users/dong/Desktop/python/16-11/FOCT/statics',]
+STATICFILES_DIRS =[os.path.join(BASE_DIR, 'statics'),]
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -119,5 +119,6 @@ CACHES = {
 }
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 100
 }
+MEDIA_ROOT=os.path.join(BASE_DIR,'media/fsj')

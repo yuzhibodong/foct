@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="SQLite -" uuid="cf4bf50e-de73-4231-8088-340ab953a71c">
+  <data-source name="SQLite -" uuid="23a2a438-bb1a-4f55-983f-6acaf1d4afc5">
     <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <schema name="" catalog=""/>
@@ -133,8 +133,22 @@
       <column name="test_time" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="max_temperature" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="min_temperature" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="foct_testimage" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
       <exported-key name="#FAKE_foctapp_collector_1" table="foctapp_collector" schema="" catalog="" columns="foct_id"/>
+    </table>
+    <table name="foctapp_mirror" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="reflectivity" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="fsj_lenth" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="fsj_producter" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="fsj_testproject" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="fsj_recoder" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="fsj_number" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="test_time" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="current_error" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
     </table>
     <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
       <column name="name" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>

@@ -1,263 +1,188 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
+    <link href="{% static 'foctapp/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'foctapp/css/user.css' %}" rel="stylesheet">
     <link rel="icon" href="{% static 'foctapp/img/main.ico' %}">
+    <style>
+        #center {
+            margin-top: 80px;
+            margin-left: 400px;
+
+        }
+
+        .form-control-search {
+            width: 50%;
+            display: inline;
+            height: 45px;
+            font-size: 20px;
+
+        }
+        .btn-search{
+            height: 45px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-top: -3px;
+        }
+        .category{
+            width: 100%;
+            height: auto;
+            background-color: #ebf0ef;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .select{
+            margin-left: 160px;
+        }
+        .select dt{
+            display: inline;
+        }
+        .select dd {
+            display: inline;
+            margin: 10px;
+        }
+
+        .select .selected a {
+            color: #fff;
+            background-color: #428bdd;
+        }
+        .img_error{
+            width: 300px;
+            height: 200px;
+        }
+        .capation_left{
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+
+    </style>
 
     <title>光智能数据分析平台</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static 'foctapp/css/bootstrap.min.css' %}" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-      <script src="{% static 'foctapp/js/jquery.min.js' %}"></script>
+    <script src="{% static 'foctapp/js/jquery.min.js' %}"></script>
     <script src="{% static 'foctapp/js/bootstrap.min.js' %}"></script>
-   <script src="{% static 'foctapp/js/echarts.min.js'%}"></script>
-    <link href="{% static 'foctapp/css/dashboard.css' %}" rel="stylesheet">
-  <script src="{% static 'foctapp/js/chart.js/dist/Chart.bundle.js'%}"></script>
-    <script src="{% static 'foctapp/js/chart.js/samples/utils.js'%}"></script>
+    <script src="{% static 'foctapp/js/search.js' %}"></script>
+    <script src="{% static 'foctapp/js/echarts.min.js' %}"></script>
 
-  </head>
+</head>
 
-  <body>
- <!--导航固定在顶部，反色导航条-->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <!--固定宽度转换为100%宽度-->
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="http://127.0.0.1:8000/foctapp/">光智能数据分析平台</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-              <button type="button" class="btn btn-primary">搜索</button>
-          </form>
-        </div>
-      </div>
-    </nav>
+<body>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-              <h4><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><strong>生产过程记录</strong></h4>
-              <li><a href="">采集器</a></li>
-              <li><a href="">传感头</a></li>
-              </ul>
-          </ul>
-          <ul class="nav nav-sidebar">
-              <h4><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><strong>工艺文件记录</strong></h4>
-            <li><a href="">工艺流程卡</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-              <h4><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><strong>测试数据记录</strong></h4>
-            <li><a href="http://127.0.0.1:8000/foctapp/cjq_test">采集器测试</a></li>
-            <li><a href="">传感头测试</a></li>
-            <li><a href="">整机测试</a></li>
-          </ul>
-              <ul class="nav nav-sidebar">
-              <h4><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><strong>出厂检测记录</strong></h4>
-            <li><a href="">出厂报告单</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+<nav class="navbar navbar-fixed-top navbar-inverse">
+    <ul class="nav navbar-nav navbar-left">
+        <li><a class="navbar-brand" href="../home">光智能数据分析平台</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="../index">数据检索</a></li>
+        <li><a href="../home">数据录入</a></li>
+        <li><a href="../home">数据统计</a></li>
 
-          <h2 class="sub-header">查询结果</h2>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
-              </tbody>
-            </table>
-
-    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main" style="width: 900px;height:600px;" class="col-md-offset-2"></div>
-    <script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-        var a=[];
-        var myChart = echarts.init(document.getElementById('main'));
-        $('.btn.btn-primary').click(function(){
-            $.get('../collector/',function(data){
-
-                for(var i=data['count']-1; i>=0;i--){
-                    a.push([i,data['results'][i]['light_power']])
-                }
-            }).done(function(){
-                var dataAll=a;
-option = {
-    title: {
-        text: '正态分布图',
-        x: 'center',
-        y: 0
-    },
-     tooltip: {
-        formatter: 'Group {a}: ({c})'
-    },
-    xAxis: [
-        {min: 0, max: 100},
-
-    ],
-    yAxis: [
-        {min: 0, max: 30},
-
-    ],
-    series: [
-        {
-            name: 'I',
-            type: 'scatter',
-            xAxisIndex: 0,
-            yAxisIndex: 0,
-            data: dataAll,
-        }
-    ]
-};
-        myChart.setOption(option);
-            })
-        });
-    </script>
-          </div>
-        </div>
+        <li> <a href="../login">{{ login }}</a></li>
+        <li ><a href="../logout">{{ logout }}</a></li>
+    </ul>
+</nav>
+{#<div id="center">#}
+{#    <form class="form-group ">#}
+{#        <input type="search" class="form-control form-control-search" placeholder="Search...">#}
+{#        <button type="button" class="btn btn-primary btn-search">搜索</button>#}
+{#    </form>#}
+{#</div>#}
+    <div class="category">
+       <ul class="select" type="none">
+		<li class="select-list">
+			<dl id="select1">
+				<dt>反射镜长度：</dt>
+				<dd><a href="#">1m以下</a></dd>
+				<dd><a href="#">1m-2m</a></dd>
+				<dd><a href="#">2m以上</a></dd>
+			</dl>
+		</li>
+		<li class="select-list">
+			<dl id="select2">
+				<dt>反射率：</dt>
+				<dd><a href="#">95%以上</a></dd>
+				<dd><a href="#">90%-95%</a></dd>
+				<dd><a href="#">90%以下</a></dd>
+			</dl>
+		</li>
+		<li class="select-list">
+			<dl id="select3">
+				<dt>录入日期：</dt>
+				<dd><a href="#">本日</a></dd>
+				<dd><a href="#">本月</a></dd>
+				<dd><a href="#">本年度</a></dd>
+			</dl>
+		</li>
+	</ul>
+    </div>
+    <div class="thumbnail">
+        <div class="capation capation_left">
+        <h3>产品型号：123123<small>&nbsp&nbsp制作者：赵冻</small></h3>
+        <p>器件名称：123 &nbsp&nbsp系列号：qweqwef  &nbsp&nbsp反射率：qweqwe &nbsp&nbsp反射镜实际长度：123&nbsp&nbsp</p>
+         <img class="img_error" src="{% static 'Lighthouse_hhjgofR.jpg' %}">
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 900px;height:600px;" class="col-md-offset-2"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var a = [];
+    var myChart = echarts.init(document.getElementById('main'));
+    $('.btn.btn-primary').click(function () {
+        $.get('../collector/', function (data) {
+
+            for (var i = data['count'] - 1; i >= 0; i--) {
+                a.push([i, data['results'][i]['light_power']])
+            }
+        }).done(function () {
+            var dataAll = a;
+            option = {
+                title: {
+                    text: '正态分布图',
+                    x: 'center',
+                    y: 0
+                },
+                tooltip: {
+                    formatter: 'Group {a}: ({c})'
+                },
+                xAxis: [
+                    {min: 0, max: 50},
+
+                ],
+                yAxis: [
+                    {min: 0, max: 30},
+
+                ],
+                series: [
+                    {
+                        name: 'I',
+                        type: 'scatter',
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: dataAll,
+                    }
+                ]
+            };
+            myChart.setOption(option);
+        })
+    });
+</script>
 
 
-  </body>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+</body>
 </html>

@@ -1,19 +1,10 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-       <link href="{% static 'foctapp/css/bootstrap.min.css' %}" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="{% static 'foctapp/css/dashboard.css' %}" rel="stylesheet">
-</head>
-<body>
- <div >
+{% extends "foctapp/base.html" %}
+{% block link %}
+        <li class="navbar-left"> <a href="../login">{{ login }}</a></li>
+        <li><a href="../logout">{{ logout }}</a></li>
+{% endblock %}
+{% block cjq_test %}
+     <div >
                 <form method="post" class="col-md-offset-5 col-md-4" >
                     {% csrf_token %}
                 <h2 class="text-center">采集器测试记录</h2>
@@ -49,27 +40,5 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
-
-            <script src="{% static 'foctapp/js/jquery.min.js' %}"></script>
-     <script>
-          window.drf = {
-          csrfHeaderName: "X-CSRFToken",
-          csrfCookieName: "csrftoken"
-        };
-          var a=$('form')
-         $('.btn.btn-primary').click(function(){
-             $.post('../collector/',function(){
-                 a
-
-             });
-         });
-
-     </script>
-
-
         </div>
-      </div>
-    </div>
-
-</body>
-</html>
+{% endblock %}

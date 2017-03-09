@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <button id="btn"class="aichihuamei">爱吃话梅</button>
+    <script type="text/javascript">
+        var $ = function(id){
+            return document.getElementById(id);
+        }
+        $("btn").onclick = function(event){
+            for(var i in event.target){
+                console.log(i+"-------"+event.target[i]);
+            }
+            console.log(event.target.nodeName);
+            console.log(event.target.dataset.a);//a
+            console.log(event.target.dataset.b);//b
+            console.log(event.target.dataset.cDE);//cde
+        }
+    </script>
+</body>
+</html>

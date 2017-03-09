@@ -1,0 +1,115 @@
+{% extends "foctapp/base.html" %}
+{% block link %}
+    <li> <a href="../login">{{ login }}</a></li>
+    <li><a href="../logout">{{ logout }}</a></li>
+{% endblock %}
+{%block index%}
+    <style>
+        #center {
+            width:60%;
+            height:auto;
+            margin-left: 30%;
+            margin-top: 35px;
+        }
+        #main{
+            width:60%;
+            height:auto;
+            margin-left: 28%;
+            margin-top: 35px;
+
+        }
+
+        .form-control-search {
+            width: 60%;
+            display: inline;
+            height: 45px;
+            font-size: 20px;
+
+        }
+        .btn-search{
+            height: 45px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-top: -3px;
+        }
+
+    </style>
+<div id="center">
+    <form class="form-group ">
+        <input type="search" class="form-control form-control-search" placeholder="选择搜索内容，例：反射镜 反射率"/>
+        <button type="button" class="btn btn-primary btn-search">搜索</button>
+    </form>
+</div>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 900px;height:600px;" ></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var option = {};
+    var myChart = echarts.init(document.getElementById('main'));
+    $('.btn-search').click(function () {
+        var search_value=$('.form-control.form-control-search').val();
+        var search_content= $.ajax({
+            type:'POST',
+            url:"http://127.0.0.1:8000/foctapp/data_statistics",
+            data:{'fsj_statistics':search_value},
+            error:function(){
+                alert('搜索数据不成功');
+            },
+            success:function(response,stutas,xhr){
+                var data=response.chart_y;
+                var dataAll=[];
+               for(var i=0;i<data.length;i++)
+               {
+                   dataAll.push([i,data[i]]);
+               }
+                option = {
+                title: {
+                    text: '正态分布图',
+                    x: 'center',
+                    y: 0
+                },
+                tooltip: {
+                    padding: 10,
+                    backgroundColor: '#222',
+                    borderColor: '#777',
+                    borderWidth: 1,
+                    formatter: function (obj) {
+                        var value = obj.value;
+                        return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
+                                + obj.seriesName + ' ' + 1 + '日：'
+                                + '</div>'
+                                + '123' + '：' + 2 + '<br>'
+                      }
+                  },
+                xAxis:
+                {
+                    name:'个数',
+                    min: 0,
+                    max: 50
+                },
+
+                yAxis:
+                {
+                    type:'value',
+                    name:'反射率',
+                    min: 0,
+                    max: 30
+                },
+                series: [
+                    {
+                        name: '反射镜',
+                        type: 'scatter',
+                        xAxisIndex: 0,
+                        yAxisIndex: 0,
+                        data: dataAll,
+                    }
+                ]
+            };
+            }
+
+        });
+        myChart.setOption(option);
+    });
+</script>
+{% endblock %}
+

@@ -1,0 +1,87 @@
+{% extends "foctapp/base.html" %}
+{% block link %}
+    <nav class="navbar-right">
+    <ul class="nav nav-pills " >
+        <li> <a href="../login">{{ login }}</a></li>
+        <li><a href="../logout">{{ logout }}</a></li>
+    </ul>
+    </nav>
+{% endblock %}
+{% block cjq_test %}
+     <div >
+         <form method="post" class="col-md-offset-5 col-md-4" action="" enctype="multipart/form-data">
+             {% csrf_token %}
+             <h2 class="text-center">反射镜测试报告</h2>
+
+             <div class="form-group">
+                 <label for="fsjtest_name">器件名称</label>
+                 <input type="text" class="form-control" required name="fsjtest_name">
+             </div>
+             <div class="form-group">
+                 <label for="fsjtest_number">序列号</label>
+                 <input type="text" class="form-control" required name="fsjtest_number">
+             </div>
+             <div class="form-group">
+                 <label for="fsj_reflectivity">反射率</label>
+                 <input type="text" class="form-control" placeholder="单位（%）" name="fsj_reflectivity">
+             </div>
+             <div class="form-group">
+                 <label for="fsj_lenth">反射镜实际长度</label>
+                 <input type="text" class="form-control" placeholder="单位（m）" name="fsj_lenth">
+             </div>
+             <div class="form-group">
+                 <label for="fsj_project">测试项目</label>
+                 <input type="text" class="form-control" name="fsj_project">
+             </div>
+             <div class="form-group">
+                 <label for="Inputproducter">制作者</label>
+                 <input type="text" class="form-control" name="Inputproducter">
+             </div>
+             <div class="form-group">
+                 <label for="Inputrecorder">录入者</label>
+                 <input type="text" class="form-control" name="Inputrecorder">
+             </div>
+             <div class="form-group">
+                 <label for="Inputcurrenterror">全温比差图</label>
+                 <input id="file0" type="file" class="form-control" name="image"><br><img src="" id="img0" >
+             </div>
+             <div class="text-center">
+                 <button type="submit" class="btn btn-primary">保存</button>
+             </div>
+         </form>
+     <script>
+         $("#file0").change(function () {
+             var objUrl = getObjectURL(this.files[0]);
+             console.log("objUrl = " + objUrl);
+             if (objUrl) {
+                 $("#img0").attr("src", objUrl);
+             }
+         });
+         //建立一個可存取到該file的url
+         function getObjectURL(file) {
+             var url = null;
+             if (window.createObjectURL != undefined) { // basic
+                 url = window.createObjectURL(file);
+             } else if (window.URL != undefined) { // mozilla(firefox)
+                 url = window.URL.createObjectURL(file);
+             } else if (window.webkitURL != undefined) { // webkit or chrome
+                 url = window.webkitURL.createObjectURL(file);
+             }
+             return url;
+         }
+         $('#img0').attr('src',$('#img0').attr('src')).load(function(){
+                     var width=this.width;
+                     var height=this.height;
+                     console.log(height);
+                     if(width>500){
+                         $('#img0').css('width','500px');
+                     }
+                     if(height>500){
+                          $('#img0').css('height','400px');
+                     }
+                 }
+         )
+     </script>
+
+     </div>
+{% endblock %}
